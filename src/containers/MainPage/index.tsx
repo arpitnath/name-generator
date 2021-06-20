@@ -5,6 +5,7 @@ import logo from '../../assets/images/logo.svg'
 import { animationsToggleRotationAction } from '../../actions/animations.actions'
 import { useDispatch, useSelector } from 'react-redux'
 import StylishButton from '../../components/StylishButton'
+import NamesContainer from '../Names'
 
 const MainPage: React.FC = () => {
   const dispatch = useDispatch()
@@ -25,6 +26,7 @@ const MainPage: React.FC = () => {
           text={'Toggle Rotation'}
           onClick={onToggleRotationClicked}
         />
+        <NamesContainer />
       </PageContentBlock>
     </PageWrapper>
   )
