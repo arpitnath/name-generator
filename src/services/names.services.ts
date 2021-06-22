@@ -16,10 +16,10 @@ export const generateRandomNames = (arr: string[]): string[] => {
 }
 
 export const checkOriginOfNames = (
-  generateFunction: (arr: string[]) => string[],
+  generatedRandomNames: string[],
   inputList: string[]
 ): boolean => {
-  const randomNames = generateFunction(inputList)
+  const randomNames = generatedRandomNames
 
   for (let i of randomNames) {
     let check = inputList.includes(i)
