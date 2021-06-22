@@ -11,7 +11,7 @@ type Props = {
 }
 
 const Conatainer: React.FC<Props> = ({ children, ...restProps }) => {
-  const generatedNames = useSelector<AppState, AppState['randomNames']>(
+  const { names } = useSelector<AppState, AppState['randomNames']>(
     (state) => state.randomNames
   )
 
@@ -25,9 +25,9 @@ const Conatainer: React.FC<Props> = ({ children, ...restProps }) => {
     <Wrapper>
       <Name.Title>{'Random Names'}</Name.Title>
       <Name.Container {...restProps}>
-        {generatedNames.length !== 0 ? (
+        {names.length > 0 ? (
           <>
-            {generatedNames.map((name) => (
+            {names.map((name) => (
               <Name key={`${Math.random() * 6}${name}`}>
                 <Name.Panes>
                   <Name.Name>{name}</Name.Name>

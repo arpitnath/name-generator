@@ -4,5 +4,5 @@ export interface BaseAction {
 }
 
 export interface NamesAction extends BaseAction {
-  payload: string[]
+  payload?: any
 }

@@ -1,4 +1,7 @@
 export const generateRandomNames = (arr: string[]): string[] => {
+  if (arr.length === 0) {
+    return ['Error']
+  }
   const randomNames: string[] = []
   const names = new Map()
   const maxLimit = 5
