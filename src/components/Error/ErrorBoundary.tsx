@@ -1,4 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react'
+import Error from './Error'
 // import Error from './Error'
 
 interface Props {
@@ -27,7 +28,7 @@ class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return <p>Error</p>
+      return <Error error={this.state.error} />
     }
 
     return this.props.children
