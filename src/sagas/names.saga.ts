@@ -5,16 +5,15 @@ import {
   updateNamesFail
 } from '../actions/names.action'
 import { generateRandomNames } from '../services/names.services'
-import data from '../assets/data/names.json'
 
-export function* handleUpdateNames() {
-  yield takeEvery(NameActionIds.NAMES_LOADING, dispatchNames)
+export function* handleUpdateNames(data: string[]) {
+  yield takeEvery(NameActionIds.NAMES_LOADING, dispatchNames, data)
 }
 
-function* dispatchNames() {
+function* dispatchNames(data: string[]) {
   const randomNames: string[] = yield call(generateRandomNames, data)
   if (randomNames[0] === 'Error') {
-    yield console.log(randomNames)
+    // yield console.log(randomNames)
     yield put(updateNamesFail(randomNames))
     return
   }

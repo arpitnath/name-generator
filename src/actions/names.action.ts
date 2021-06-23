@@ -7,7 +7,8 @@ export const NameActionIds = {
 }
 
 export const loadNames = () => ({
-  type: NameActionIds.NAMES_LOADING
+  type: NameActionIds.NAMES_LOADING,
+  payload: []
 })
 
 export const updateNames = (names: string[]): NamesAction => ({
