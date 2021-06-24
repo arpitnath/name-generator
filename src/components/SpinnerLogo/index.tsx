@@ -11,10 +11,3 @@ const SpinnerLogo: React.FC<SpinnerLogoProps> = ({ isSpinning, logo }) => {
 }
 
 export default SpinnerLogo
-
-/**
- * @Assumtion
- * if we are already passing the
- * {isSpinning} prop as true or false then the
- * spinner either rotates or stays still
- */
