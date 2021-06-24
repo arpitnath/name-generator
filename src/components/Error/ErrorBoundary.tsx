@@ -1,4 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react'
+import StylishButton from '../StylishButton'
 import Error from './Error'
 
 interface Props {
@@ -26,7 +27,13 @@ class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return <Error />
+      return (
+        <Error>
+          <StylishButton
+            onClick={() => window.location.reload()}
+            text={'Reload 🔄'}></StylishButton>
+        </Error>
+      )
     }
     return this.props.children
   }

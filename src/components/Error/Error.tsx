@@ -1,10 +1,25 @@
 import React from 'react'
+import styled from 'styled-components'
 
-const Error: React.FC = () => {
+const Wrapper = styled.div`
+  color: white;
+  text-align: center;
+  max-width: 1100px;
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 30vw;
+  height: fit-content;
+`
+
+const Error: React.FC = ({ children }) => {
   return (
-    <div style={{ textAlign: 'center', color: '#fff', marginTop: '50px' }}>
+    <Wrapper>
       <h3>Something went wrong </h3>
-    </div>
+      {children}
+    </Wrapper>
   )
 }
 
