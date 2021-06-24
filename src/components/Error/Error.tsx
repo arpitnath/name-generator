@@ -1,13 +1,9 @@
 import React from 'react'
 
-interface IError {
-  error: string | Error
-}
-
-const Error: React.FC<IError> = ({ error }) => {
+const Error: React.FC = () => {
   return (
-    <div>
-      <h3>Something went wrong | {error}</h3>
+    <div style={{ textAlign: 'center' }}>
+      <h3>Something went wrong </h3>
     </div>
   )
 }

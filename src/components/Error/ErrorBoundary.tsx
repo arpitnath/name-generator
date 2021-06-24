@@ -1,6 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react'
 import Error from './Error'
-// import Error from './Error'
 
 interface Props {
   children: ReactNode
@@ -18,7 +17,6 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError(error: Error): State {
-    // Update state so the next render will show the fallback UI.
     return { hasError: true, error: error }
   }
 
@@ -28,9 +26,8 @@ class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return <Error error={this.state.error} />
+      return <Error />
     }
-
     return this.props.children
   }
 }
