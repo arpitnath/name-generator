@@ -21,7 +21,7 @@ const MainPage: React.FC = () => {
   return (
     <PageWrapper>
       <PageContentBlock>
-        <SpinnerLogo isSpinning={false} logo={logo} />
+        <SpinnerLogo isSpinning={isRotating} logo={logo} />
         <StylishButton
           text={'Toggle Rotation'}
           onClick={onToggleRotationClicked}
