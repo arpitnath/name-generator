@@ -21,6 +21,12 @@ const Conatainer: React.FC<Props> = ({ children, ...restProps }) => {
     dispatch(loadNames())
   }
 
+  React.useEffect(() => {
+    if (names.includes('Error')) {
+      throw new Error('Data passed was empty ')
+    }
+  }, [names])
+
   return (
     <Wrapper>
       <Name.Title>{'Random Names'}</Name.Title>
