@@ -7,10 +7,15 @@ export const generateRandomNames = (arr: string[]): string[] => {
   const maxLimit = 5
 
   while (names.size < 5) {
-    let index = Math.ceil(Math.random() * maxLimit)
+    let index = Math.ceil(Math.random() * arr.length)
+
+    if (index >= arr.length) {
+      index = Math.ceil(Math.random() * maxLimit)
+    }
 
     if (!names.get(index)) {
       index = Math.ceil(Math.random() * (arr.length - 1))
+
       names.set(index, arr[index])
     }
   }
